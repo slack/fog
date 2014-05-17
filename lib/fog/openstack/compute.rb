@@ -31,6 +31,8 @@ module Fog
       collection  :security_group_rules
       model       :key_pair
       collection  :key_pairs
+      model       :availability_zone
+      collection  :availability_zones
       model       :tenant
       collection  :tenants
       model       :volume
@@ -170,6 +172,8 @@ module Fog
       request :list_hosts
       request :get_host_details
 
+      # Availability zones
+      request :list_availability_zones
 
       class Mock
         attr_reader :auth_token
