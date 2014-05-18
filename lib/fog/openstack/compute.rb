@@ -343,6 +343,7 @@ module Fog
         end
 
         def request(params)
+          params[:path].gsub!(/\.json$/, '') # hax for jumpgate
           begin
             response = @connection.request(params.merge({
               :headers  => {
